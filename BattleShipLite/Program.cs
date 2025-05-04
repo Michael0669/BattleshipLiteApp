@@ -97,7 +97,7 @@ namespace BattleshipLite
 
         private static void DisplayShotResults(string row, int column, bool isAHit)
         {
-            if (isAHit = true)
+            if (isAHit == true)
             {
                 Console.WriteLine($"{row}{column} is a hit!");
             }
@@ -107,6 +107,9 @@ namespace BattleshipLite
             }
 
             Console.WriteLine();
+            Console.WriteLine("Any button to continue");
+            Console.ReadLine();
+            Console.Clear();
         }
 
         private static string AskForShot(PlayerInfoModel activePlayer)
