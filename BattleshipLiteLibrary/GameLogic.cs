@@ -41,10 +41,12 @@ namespace BattleshipLiteLibrary
 
         private static void AddGridSpot(PlayerInfoModel model, string letters, int number)
         {
-            GridSpotModel spot = new GridSpotModel();
-            spot.SpotLetter = letters;
-            spot.SpotNumber = number;
-            spot.Status = GridSpotStatus.Empty;
+            GridSpotModel spot = new GridSpotModel
+            {
+                SpotLetter = letters,
+                SpotNumber = number,
+                Status = GridSpotStatus.Empty
+            };
 
             model.ShotGrid.Add(spot);
         }
@@ -89,13 +91,13 @@ namespace BattleshipLiteLibrary
 
         private static bool ValidateGridLocation(PlayerInfoModel model, string row, int column)
         {
-            bool isValidLocation = true;
+            bool isValidLocation = false;
 
             foreach (var ship in model.ShotGrid)
             {
                 if (ship.SpotLetter == row.ToUpper() && ship.SpotNumber == column)
                 {
-                    isValidLocation = false;
+                    isValidLocation = true;
                 }
             }
 

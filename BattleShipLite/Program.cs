@@ -40,12 +40,12 @@ namespace BattleshipLite
             }
             while (winner == null);
 
-            IdentifyWiunner(winner);
+            IdentifyWinner(winner);
 
             Console.ReadLine();
         }
 
-        private static void IdentifyWiunner(PlayerInfoModel winner)
+        private static void IdentifyWinner(PlayerInfoModel winner)
         {
             Console.WriteLine($"{winner.UsersName} is the winner of the game!");
             Console.WriteLine($"{winner.UsersName} took {GameLogic.GetShotCount(winner)} shots!");
@@ -113,7 +113,7 @@ namespace BattleshipLite
                 }
                 else
                 {
-                    Console.WriteLine(" ? ");
+                    Console.Write(" ? ");
                 }
             }
         }
